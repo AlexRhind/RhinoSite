@@ -1,0 +1,330 @@
+/* Scss Document */
+
+html {height: 100%}
+
+body{
+	margin: 0;
+	padding: 0;
+	widows: inherit;/*kern and ligature set*/
+	//hanging-punctuation: none || [ first || [ force-end | allow-end ] || last ];
+	font-kerning: normal;
+	text-rendering: optimizeLegibility;
+	font-variant-ligatures: common-ligatures; //DO NOT RUN with Materialise icon font
+}
+
+
+// li, ul   {
+// 	font-size: 1rem;
+// 	margin: 0.3rem 0;
+// 	text-decoration: none;
+// }
+
+
+//Nav menu
+nav i.right {
+	margin: 3px 12px 0 0;
+	//border: 1px solid red;
+	line-height: 1rem;
+	display: inline-block;
+	float: none;
+}
+
+//error label
+label, .formError {
+	font-family: $secondaryFont; //Barlow semi-condensed 400 regular, 400i reg italic 600 semi-bold
+	font-size: 1rem;
+	margin: 0.3rem 0 0.3rem 10px; //10px left indent for labels
+}
+
+
+//this sets the default lineheight at 1.8. Enter an optional 5th value if it needs changed
+@mixin p($m-top, $m-right, $m-bottom, $m-left, $lineHeight: 1.5) {
+	font-family: $secondaryFont; //Barlow semi-condensed 400 regular, 400i reg italic 600 semi-bold
+	font-size: 1.1rem;
+	font-weight: 300;
+	font-stretch: normal;
+	//font-variant: common-ligatures tabular-nums||proportional-nums;
+	//text-transform: initial;
+	//letter-spacing: 0.08px;
+	//word-spacing: 0.02em;
+	line-height: $lineHeight;
+	color: white;
+	text-align: left;
+	margin-top: $m-top;
+	margin-right: $m-right;
+	margin-bottom: $m-bottom;
+	margin-left: $m-left;
+}
+
+p { @include p(0, 0, 1rem, 0 )
+		}
+
+p.workshop { @include p(0, 0, 1.4rem, 0 )
+		}
+
+p.workshopCollapsible { @include p(0, 0, 0rem, 0 )
+		}
+
+p.meetArtist2 { @include p(16rem, 0, 0.75rem, 0)
+		}
+
+
+//table settings copy basic para t
+tr, td {
+		@include p(0, 0, 1rem, 0 )
+		color: $copyBlack;
+		text-align: center;
+		//border: 0px solid red;
+
+		&.eventHeader {
+				text-align: left;
+		}
+}
+
+th { @include p(0, 0, 1rem, 0 )
+		color: $copyBlack;
+		font-weight: 600;
+		text-align: center;
+
+		&.eventHeader {
+				text-align: left;
+		}
+}
+
+
+ul, ol, li { @include p(0, 0, 0.75rem, 0)
+		text-decoration: none;
+		}
+
+a { @include p(0, 0, 0.75rem, 0)
+		text-decoration: none;
+				&:hover{
+				text-decoration: underline !important;
+				}
+	}
+
+a.underline {
+			@include p(0, 0, 0.75rem, 0)
+			text-decoration: underline;
+				&:hover{
+				text-decoration: underline !important;
+				}
+	}
+
+a.offerLink {
+		@include p(0, 0, 0.75rem, 0)
+		text-decoration: underline;
+		color: $copyBlack;
+		font-size: 1.1rem;
+		font-weight: 600;
+				&:hover{
+				text-decoration: underline !important;
+				}
+	}
+
+
+a.btn-large {
+		@include p(5px, 0, 0, 0)
+		text-decoration: none;
+		color: $copyBlack;
+		font-weight: 400;
+		letter-spacing: 0.9px;
+		padding: 8px 20px 0px 20px;
+				&:hover{
+				text-decoration: none !important;
+				}
+	}
+
+
+//this sets the default lineheight at 1.8. Enter an optional 5th value if it needs changed
+@mixin h1($m-top, $m-right, $m-bottom, $m-left, $lineHeight: 1.35) {
+	font-family: $primaryFont;
+	font-size: 2rem;
+	font-weight: 300;
+	//font-stretch: normal;
+	//font-variant: normal;
+	//letter-spacing: -0.1px;
+	word-spacing: 0.02em;
+	line-height: $lineHeight; //set 1.8
+	color: white;
+	text-align: left;
+	margin-top: $m-top;
+	margin-right: $m-right;
+	margin-bottom: $m-bottom;
+	margin-left: $m-left;
+}
+
+h1 {
+	@include h1(1.5rem, 0, 0.2rem, 0)
+}
+
+h1.gallery {
+	@include h1(0rem, 0, 0rem, 0)
+}
+@include break(770) {
+		h1.gallery {
+			@include h1(0rem, 0, 0rem, 0, 1.25)
+			font-size: 1.7rem;
+	}
+}
+
+//this is a note
+h1.meetArtisth1 { @include h1(2rem, 0, 0, 8%)
+		margin-left: 8%;
+}
+@include break(768) {
+			h1.meetArtisth1 {
+				@include h1(1rem, 7%, 0, 7%)
+				font-size: 1.8rem;
+			}
+}
+@include break(415) {
+			h1.meetArtisth1 {
+				@include h1(1rem, 0%, 0, 0%)
+				font-size: 1.8rem;
+				text-align: center;
+			}
+}
+
+h1.friends {
+	@include h1(0, 0, 0, 0, 1.3)
+	text-align: left;
+	color: $orange;
+}
+
+
+// vv112dovnrov'	rvrv
+
+
+
+@mixin h2($m-top, $m-right, $m-bottom, $m-left, $lineHeight: 1.45) {
+	font-family: $primaryFont; //Barlow Condensed
+	font-size: 1.6rem;
+	font-weight: 300; //light
+	//font-stretch: normal;
+	//font-variant: normal;
+	//letter-spacing: -0.1rem;
+	//word-spacing: 0.02rem;
+	line-height: $lineHeight; //set 1.5
+	color: white;
+	text-align: left;
+	margin-top: $m-top;
+	margin-right: $m-right;
+	margin-bottom: $m-bottom;
+	margin-left: $m-left;
+}
+
+h2 {
+	@include h2(2rem, 0, 1.2rem, 0)
+
+}
+
+
+h2.gallery {
+	@include h2(3rem, 0, 1.3rem, 0)
+}
+
+h2.workshop {
+	@include h2(1rem, 0, 0rem, 0)
+}
+
+h2.workshopHide {
+	@include h2(0rem, 0, 1.2rem, 0)
+}
+
+h2.form {
+	@include h2(1rem, 0, 1.3rem, 0)
+	text-align: center;
+}
+
+h2.meetArtisth2 {
+	@include h2(0.3rem, 0, 1.2rem, 0)
+	font-weight: 300;
+	margin-left: 8%;
+}
+@include break(768) {
+			h2.meetArtisth2 {
+				@include h2(0.3rem, 7%, 2rem, 7%)
+				font-size: 1.4rem;
+			}
+}
+@include break(415) {
+			h2.meetArtisth2 {
+				@include h2(0.3rem, 7%, 2rem, 7%)
+				font-size: 1.4rem;
+				text-align: center;
+			}
+}
+
+a.workshop { @include h2(2rem, 0, 1.2rem, 0)
+				text-decoration: underline;
+				&:hover {
+					color: $orange;
+				}
+}
+
+
+
+@mixin h3($m-top, $m-right, $m-bottom, $m-left, $lineHeight: 1.7) {
+	font-family: $primaryFont;
+	font-size: 1.4rem;
+	font-weight: 600;
+	//font-stretch: normal;
+	//font-variant: normal;
+	//letter-spacing: -0.1px;
+	//word-spacing: 0.02em;
+	line-height: $lineHeight; //set 2
+	color: white;
+	text-align: left;
+	margin-top: $m-top;
+	margin-right: $m-right;
+	margin-bottom: $m-bottom;
+	margin-left: $m-left;
+}
+
+h3 {
+	@include h3(2rem, 0, 0.7rem, 0)
+}
+
+
+h3.footer {
+	@include h3(20px, 0, 0.5rem, 0)
+	color: white;
+}
+
+i.orangeCopy {
+	padding-top: 0px;
+	font-size: 1.8rem;
+	vertical-align: middle;
+}
+
+
+h4 {
+	font: 700 1.2rem/1.6rem $primaryFont;
+	color: $copyBlack;
+}
+
+
+/*=======================*/
+/*Links here********/
+/*=======================*/
+
+a.blueLink { color: $blue !important;
+		&:hover{
+		text-decoration: underline !important;
+		}
+}
+
+a.copyBlackLink { color: $copyBlack !important;
+				  font-family: $secondaryFont;
+		&:hover{
+		text-decoration: underline !important;
+		}
+}
+
+
+strong {font-weight: 700;}
+.medium {font-weight: 700 !important;}
+.orangeCopy{color: $orange;}
+.copyBlack{color: $copyBlack;}
+.shadow {text-shadow: 2px 2px 4px $copyBlack;}

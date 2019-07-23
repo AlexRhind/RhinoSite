@@ -1,0 +1,16 @@
+/* GOMA GU2 Scss Document */
+
+/* Base data */
+@import "alexPartials/variables";/* var mixins first */
+@import "alexPartials/mixins"; /*functions*/
+@import "alexPartials/typographyBase";
+
+/* Structural */
+@import "alexPartials/grid";
+@import "alexPartials/googleMap";
+@import "alexpartials/slider";
+@import "alexpartials/formPages";
+@import "alexpartials/simpleGallery";
+@import "alexpartials/GoMAMaterialize";
+@import "alexPartials/footer";
+@import "alexPartials/structure";

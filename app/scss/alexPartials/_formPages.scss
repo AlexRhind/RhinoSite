@@ -1,0 +1,106 @@
+/* Scss Document */
+
+.friendsHeader{
+    width: 35%;
+    background-color: black;
+    padding: 0 -2.0rem ;
+    border: 1px solid black;
+    margin: -15px auto 0 auto;
+      > img {
+        //border: 1px solid red;
+        width: 43%;
+        display: block;
+        margin: 20px auto 0 auto;
+
+      }
+    }
+
+.formPageDiv {
+    width: 35%;
+    background-color: white;
+    padding: 1rem 2rem 0 2rem;
+    opacity: 0.90;
+    margin: 0 auto;
+}
+
+@include break(900) {
+      .formPageDiv {
+          width: 50%;
+      }
+      .friendsHeader{
+          width: 50%;
+      }
+}
+
+@include break(650) {
+      .formPageDiv {
+          width: 70%;
+      }
+      .friendsHeader{
+          width: 70%;
+      }
+}
+
+.linksOtherPages {
+    text-align: center;
+    //text-shadow: 2px 2px $copyBlack70;
+    width: 35%;
+    margin: 10px auto 10% auto;
+}
+
+.formPagesImg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    //opacity: 0.50;
+}
+
+//From Components>forms>_inputFields 204
+.helper-text {
+  &::after {
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  position: relative;
+  min-height: 18px;
+  display: block;
+  font-size: 12px;
+  color: $rose;
+}
+
+
+
+button.centred100 {
+    margin: 10px auto 0 auto;
+    width: 100%;
+    display: block;
+    color: $copyBlack;
+}
+
+//No Materlialize
+input.noMat[type=text], input.noMat[type=number] {
+    background-color: white;
+    border: none;
+    border-bottom: 0px solid #9e9e9e;
+    border-radius: 0;
+    outline: none;
+    height: 2rem;
+    width: 5rem;
+    font-size: 1rem;
+    margin: 0 0 20px 0;
+    padding: 0 0 0 8px;
+    box-shadow: none;
+    box-sizing: content-box;
+    transition: all 0.3s;
+        &.child {
+          margin-left: 2rem;
+        }
+  }
+
+//input:not([type]) - disabled
+//input.noMat[type=text], input.noMat[type=password], input.noMat[type=email], input.noMat[type=url],
+//input.noMat[type=time], input.noMat[type=date], input.noMat[type=datetime], input.noMat[type=datetime-local],
+//input.noMat[type=tel], input.noMat[type=number], input.noMat[type=search], textarea.materialize-textarea.noMat

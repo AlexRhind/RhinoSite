@@ -1,0 +1,41 @@
+/* Scss Document */
+
+$copyBlack: #29292A;
+$copyBlack70: rgba($copyBlack, 0.7);
+$copyBlack50: rgba($copyBlack, 0.5);
+$copyBlack20: rgba($copyBlack, 0.2);
+$copyBlackNil: rgba($copyBlack, 0.05);
+
+$darkGrey: #383838;
+$midGrey: #707070;
+$lightGrey: #E4E4E4;
+
+$white: #ffffff;
+$white20: rgba($white, 0.20);
+$white50: rgba($white, 0.50);
+$white85: rgba($white, 0.85);
+
+$orange: #FFAA00;
+$orange15: rgba($orange, 0.15);
+
+$turq: #2A9BA8; //set as a rest of teal
+
+$purple: #6C52B2;
+
+$blue: #536DFE;
+
+$rose: #BC436C;
+
+$smaltBlue: #1D7FB4;
+
+
+
+$dottedBorder: 1px dotted $midGrey;
+
+
+
+//Google FONT - Barlow Condensed regular, 400i reg italic 600 semi-bold
+$primaryFont: 'Barlow Condensed', sans-serif;
+
+//Google FONT - Barlow semi-condensed 400 regular, 400i reg italic 600 semi-bold
+$secondaryFont: 'Barlow Semi Condensed', sans-serif;

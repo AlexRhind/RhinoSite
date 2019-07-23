@@ -1,0 +1,287 @@
+/* Scss Document */
+
+//This deals with elements in the HTML
+
+*, *:before, *:after {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+html {
+	//background-color: #2b2b2b;
+}
+
+
+body {
+  //height: 100vh;
+	//max-width: 1540px;
+  //max-width: 100%;
+  overflow-x: hidden;
+  //height:auto!important;
+	//border: 1px dotted black;
+  margin: 0 auto;
+  background-color: black;
+}
+
+nav {
+	background-color: black;
+  opacity: 0.9;
+	border: 0px solid green;
+}
+
+//Nav GOMA logo
+.brand-logo > img.largeLogo {
+  width: 400px;
+  margin: 20px 0 0 7%;
+     }
+@include break(540) {
+			.brand-logo > img.largeLogo {
+			  display: none;
+			  //margin: 20px 0 0 7%;
+			     }
+}
+.brand-logo > img.smallLogo {
+		display: none;
+		//width: 400px;
+	  //margin: 20px 0 0 7%;
+     }
+@include break(540) {
+			.brand-logo > img.smallLogo {
+			  display: inline-block;
+				width: 80px;
+			  margin: 20px 0 0 7%;
+			     }
+}
+
+
+.imgFill {
+  height: 70vh;
+  background-repeat: no-repeat;
+  background-position: center top;
+  opacity: 0;
+  visibility: hidden;
+
+}
+
+// Section fill colors
+
+@mixin sectionFill ($p-top, $p-left, $p-bottom, $p-right, $color){
+    padding-top: $p-top;
+    padding-left: $p-left;
+    padding-bottom: $p-bottom;
+    padding-right: $p-right;
+    background-color: $color;
+}
+
+.whiteBgrd {
+  @include sectionFill (20px, 7%, 50px, 7%, $white)
+}
+
+.turqBgrd {
+  @include sectionFill (20px, 0, 60px, 0, $turq)
+}
+
+@include break(749) {
+		.turqBgrd {
+		  @include sectionFill (20px, 0, 50px, 0, $turq) //index 1sr panel
+		}
+}
+
+.turqBgrdNoPadding {
+  @include sectionFill (0, 0, 0, 0, $turq)
+}
+
+.purpleBgrd {
+  @include sectionFill (20px, 0, 20px, 0, $purple)
+}
+
+@include break(730) {
+	.purpleBgrd {
+	  @include sectionFill (20px, 0, 50px, 0, $purple)
+	}
+}
+
+
+.purpleBgrdNoPadding {
+  @include sectionFill (0, 0, 0, 0, $purple)
+}
+
+.smaltBlueBgrd {
+  @include sectionFill (20px, 0, 20px, 0, $smaltBlue)
+}
+@include break(730) {
+		.smaltBlueBgrd {
+		  @include sectionFill (20px, 0, 50px, 0, $smaltBlue)
+		}
+}
+
+
+
+.smaltBlueBgrd_7pc {
+  @include sectionFill (20px, 7%, 20px, 7%, $smaltBlue)
+	min-height: 150px;
+
+}
+
+.smaltBlueBgrdNoPadding {
+  @include sectionFill (0, 0, 0, 0, $smaltBlue)
+}
+
+.roseBgrdNoPadding {
+  @include sectionFill (0, 0, 0, 0, $rose)
+}
+
+img.bannerFriendsImg {
+			width: 200px;
+}
+
+// Parallax windows and sections
+
+.parallaxWrapper{
+      min-height: 70vh;
+      border: 1px solid black;
+}
+
+.wrapperWorkshop {
+      min-height: 70vh;
+      border: 0px solid green;
+			position: relative; //parent
+			//background-image: image("img/liam-martens.png");
+				> img {
+					height: auto;
+					max-width: 100%;
+					object-fit: cover;
+					//max-height:600px;
+				}
+	}
+
+.banner {
+      position: absolute; //child
+      top: 20%;
+      width: 100%;
+      border: 0px solid red;
+      background-color: $copyBlack70;
+      padding: 20px 0 20px 7%;
+		}
+
+.bannerWorkshop {
+      position: absolute;
+      bottom: 0%;
+      width: 100%;
+      border: 0px solid red;
+      background-color: $copyBlack70;
+      padding: 20px 0 20px 0;
+			z-index: 4;
+		}
+
+//See Grid for banner contents
+
+.shortWidth{
+      margin-right: 60%;
+}
+@include break(800) {
+			.shortWidth{
+			      margin-right: 50%;
+			}
+}
+@include break(600) {
+			.shortWidth{
+			      margin-right: 20%;
+			}
+}
+
+
+// Meet the Artist Pages
+// =====================
+
+//Gallery art and artists in circles
+.exampleArtist {
+		  width: 23%;
+		  min-width: 100px;
+			max-width: 200px;
+		  border-radius: 50%;
+		  border: 2px solid white;
+		  align-self: center;
+		  margin-left: 7%;
+}
+@include break(415) {
+
+			.exampleArtist {
+					  width: 100%;
+					  min-width: 100px;
+						max-width: 130px;
+					  border-radius: 50%;
+					  border: 2px solid white;
+					  margin: 20px auto;
+						display: block;
+			}
+
+}
+
+//Workshop collapsible headers
+
+@mixin collapsible-header{
+    margin: 0 !important;
+    background-color: $darkGrey;
+}
+
+.collapsible-header.smaltBlueRule {
+  @include collapsible-header;
+	border-left: 15px solid $smaltBlue;
+}
+
+.collapsible-header.roseRule {
+  @include collapsible-header;
+	border-left: 15px solid $rose;
+}
+
+.collapsible-header.purpleRule {
+  @include collapsible-header;
+	border-left: 15px solid $purple;
+}
+
+
+
+@mixin collapsible-body {
+  display: none;
+  border: 0px solid white;
+  box-sizing: border-box;
+  padding: 1rem 0 1rem 0;
+
+}
+.collapsible-body.roseBRule {
+  @include collapsible-body;
+	border-left: 15px solid $rose;
+}
+
+.collapsible-body.purpleBRule {
+  @include collapsible-body;
+	border-left: 15px solid $purple;
+}
+
+.collapsible-body.smaltBlueBRule {
+  @include collapsible-body;
+	border-left: 15px solid $smaltBlue;
+}
+
+//Table for workshops
+.eventHeader {
+		width: 30%;
+		//border: 1px solid red;
+}
+
+// .ticketType {
+//
+// }
+
+.deleteBooking {
+		align-content: center;
+}
+
+.tint {
+	background-color: $orange15;
+}
+
+footer.page-footer {
+	padding-top: 30px;
+}

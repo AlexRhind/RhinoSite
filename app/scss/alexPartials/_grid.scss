@@ -1,0 +1,682 @@
+
+//Grid - overview and gallery
+//Slider does not use grid
+
+//For the Workshop banner grid, see _structure
+
+
+//Yellow GoMA Friends offer wrapper/band includes
+		.offer {
+				height: 30px;
+				text-align: center;;
+				background-color: $orange;
+				padding: 2px 10px 0 10px;
+				overflow: hidden;
+				color: $copyBlack;
+				font-size: 1.1rem;
+			}
+
+//===============================
+// Index page top image
+//==============================
+
+.grid-start {
+		margin: 0 7%;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-auto-rows: minmax(100px, auto);
+		grid-gap: 70px;
+		justify-items: stretch;
+
+	}
+
+	.boxStart {
+		grid-column: 4/7;
+		grid-row: 1;
+		min-height: 450px;
+		padding: 12% 0 12% 0;
+		border: 0px solid red;
+	}
+
+@include break(930) {
+
+			.boxStart {
+				grid-column: 3/7;
+				grid-row: 1;
+				min-height: 450px;
+				padding: 12% 0 12% 0;
+				border: 0px solid red;
+			}
+}
+
+@include break(690) {
+
+			.boxStart {
+				grid-column: 1/7;
+				grid-row: 1;
+				min-height: 450px;
+				padding: 12% 0 12% 0;
+				border: 0px solid red;
+			}
+}
+
+
+//==============================
+// 1st grid - opening intro cols
+//==============================
+
+
+@mixin threeColGrid {
+				margin-top: 0;
+				margin-right: 7%;
+				margin-bottom: 0;
+				margin-left: 7%;
+				border: 0px solid green;
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				grid-auto-rows: minmax(10px, auto);
+				grid-column-gap: 70px;
+				grid-row-gap: 10px;
+				justify-items: stretch;
+				//min-height: 35vh;
+		}
+
+@mixin threeByFourGrid {
+				margin-top: 0;
+				margin-right: 7%;
+				margin-bottom: 0;
+				margin-left: 7%;
+				display: grid;
+				grid-template-columns: repeat(6, 1fr);
+				grid-template-rows: auto, auto, auto, 10px;
+				//grid-auto-rows: auto;
+				grid-row-gap: 0px;
+				grid-column-gap: 70px;
+				justify-items: stretch;
+				min-height: 50vh;
+		}
+
+// ****Grid containers****
+
+//Index page, Meet artsit, Workshop grid containers
+.grid-one, .grid-two, .grid-three, .grid-six, .workshopGrid {
+	@include threeColGrid
+	}
+
+
+//meetArtist Pages grid containers
+
+.grid-five, .grid-seven, .grid-eight {
+	@include threeByFourGrid
+}
+
+// Index page grid boxes
+// =====================
+
+		.box1 {
+			grid-column: 1/2;
+			grid-row: 1;
+			border: 0px solid red ;
+		}
+
+		.box2 {
+			grid-column: 2/3;
+			grid-row: 1;
+			border: 0px solid red ;
+		}
+
+		.box3, .boxMap {
+			grid-column: 3/4;
+			grid-row: 1;
+			border: 0px solid red ;
+		}
+
+
+
+//Footer and 1st index colour panel
+@include break(749) {
+
+					.threeColGrid {
+						justify-items: start;
+					}
+
+					.box1 {
+						grid-column: 1/4;
+						grid-row: 2;
+						border: 0px solid red ;
+						display: block;
+					}
+
+					.box2 {
+						grid-column: 1/4;
+						grid-row: 1;
+						display: block;
+					}
+
+					.box3 {
+						grid-column: 1/4;
+						grid-row: 3;
+						display: block;
+					}
+
+					.boxMap { //Google map
+						grid-column: 1/4;
+						grid-row: 3;
+						border: 0px solid red ;
+						min-height: 200px;
+					}
+
+	}
+
+
+
+
+// index grid 2 - Art of Glass Gallery cols
+//==========================================
+
+	.box4 {
+		grid-column: 1/2;
+		grid-row: 1;
+		border: 0px solid red ;
+
+		> img {
+			width: 180px;
+			margin-top: 8px;
+			opacity: 0.5;
+		}
+	}
+
+	.box5 {
+		grid-column: 2/3;
+		grid-row: 1;
+		border: 0px solid red ;
+
+	}
+
+	.box6 {
+		grid-column: 3/4;
+		grid-row: 1;
+		border: 0px solid red ;
+	}
+
+@include break(730) {
+
+	.box4 {
+		display: none;
+	}
+
+	.box5 {
+		grid-column: 1/4;
+		grid-row: 1;
+		border: 0px solid red ;
+
+	}
+
+	.box6 {
+		grid-column: 1/4;
+		grid-row: 2;
+		border: 0px solid red ;
+	}
+}
+
+// index grid 3 - Egyptian cols
+	//==============================
+
+		.box7 {
+			grid-column: 1/2;
+			grid-row: 1;
+			border: 0px solid red ;
+		}
+
+		.box8 {
+			grid-column: 2/3;
+			grid-row: 1;
+			border: 0px solid red ;
+		}
+
+		.box9 {
+			grid-column: 3/4;
+			grid-row: 1;
+			border: 0px solid red ;
+
+					> img {
+						width: 180px;
+						margin-top: 8px;
+						opacity: 0.5;
+					}
+
+		}
+
+		@include break(730) {
+
+				.box7 {
+					grid-column: 1/4;
+					grid-row: 1;
+					border: 0px solid red ;
+				}
+
+				.box8 {
+					grid-column: 1/4;
+					grid-row: 2;
+					border: 0px solid red ;
+				}
+
+				.box9 {
+					display: none;
+							}
+
+		}
+
+
+
+// Meet Artist grid5 - top section Morag markyD
+//==============================
+
+
+		.displayClass0 {
+			display: none;
+		}
+
+		.displayClass1 {
+			display: inline-block;
+		}
+
+		.box10 {
+			grid-column: 1/3;
+			grid-row: 1 / 5;
+			border: 0px solid red ;
+			margin-left: -30%;
+			margin-right: -70px;
+			>img {
+				overflow: hidden;
+				width: 100%;
+			}
+		}
+
+		.bgrdImgGrid {
+			grid-column: 3 / 7;
+			grid-row: 1 / 4;
+			border: 0px solid yellow;
+			opacity: 0.14;
+			>img {
+				width: 75%;
+			}
+		}
+
+//Glass baubles
+		.bgrdBaubles {
+			grid-column: 3 / 7;
+			grid-row: 1 / 4;
+			>img {
+				width: 75%;
+			}
+		}
+
+		.box11 {
+			grid-column: 3 / 7;
+			grid-row: 1;
+		}
+
+		.box12 {
+			grid-column: 3 / 7;
+			grid-row: 2;
+		}
+
+		.box13 {
+			grid-column: 5 / 7;
+			grid-row: 3;
+			margin-right: 7%;
+		}
+
+		//
+		@include break(768) {
+
+			.displayClass0 {
+				display: inline-block;
+			}
+
+			.displayClass1 {
+				display: none;
+			}
+
+			//art of glass logo
+			.bgrdImgGrid {
+				grid-column: 1 / 7;
+				grid-row: 1 / 4;
+				border: 0px solid yellow;
+				opacity: 0.14;
+				>img {
+					width: 50%;
+					padding: 0 0 10px 0;
+				}
+			}
+
+			.box11 {
+				grid-column: 1 / 7;
+				grid-row: 1;
+			}
+
+			.box12 {
+				grid-column: 1 / 7;
+				grid-row: 2;
+			}
+
+			.box13 {
+				grid-column: 3 / 7;
+				grid-row: 3;
+				margin-top: 15px;
+				margin-right: 7%;
+
+			}
+
+			//Glass baubles
+			.bgrdBaubles {
+				grid-column: 1 / 7;
+				grid-row: 1 / 4;
+				>img {
+					width: 87%;
+					//border: 1px solid red;
+					margin-left: -8.5%;
+					margin-top: -10%;
+					overflow: hidden;
+
+				}
+			}
+
+		}
+
+
+
+	@include break(415) {
+
+					.grid-five {
+							margin-top: 0;
+							margin-right: 7%;
+							margin-bottom: 0;
+							margin-left: 7%;
+							display: grid;
+							grid-template-columns: repeat(6, 1fr);
+							grid-template-rows: auto, auto, auto, 10px;
+							//grid-auto-rows: auto;
+							grid-row-gap: 0px;
+							grid-column-gap: 0px;
+							justify-items: stretch;
+							min-height: 50vh;
+					}
+
+					//art of glass logo
+					.bgrdImgGrid {
+						grid-column: 1 / 7;
+						grid-row: 1 / 4;
+						border: 0px solid yellow;
+						opacity: 0.14;
+						z-index: 0;
+						>img {
+							width: 90%;
+							padding: 120px 0 10px 0;
+						}
+					}
+
+					img.displayClass0 {
+						display: block;
+						z-index: 3;
+
+					}
+
+					img.displayClass1 {
+						display: none;
+						z-index: 3;
+
+					}
+
+					.box13 {
+								grid-column: 1 / 7;
+								grid-row: 3;
+								margin: 0px 7% 15px 7%;
+								text-align: center;
+								//border: 1px solid red;
+								>p {
+									text-align: center;
+								}
+							}
+
+		}
+
+
+
+
+
+
+		// Meet Artist 3 Alina use grid5 - top section
+		//==============================
+
+
+				.box16 {
+					grid-column: 5 / 7;
+					grid-row: 1 / 5;
+					border: 0px solid red ;
+					margin-left: -30%;
+					margin-right: -70px;
+					>img {
+						overflow: hidden;
+						width: 100%;
+					}
+				}
+
+				.bgrdImgGrid-page3 {
+					grid-column: 1 / 5;
+					grid-row: 1 / 4;
+					z-index: -4;
+					border: 0px solid yellow;
+					opacity: 0.14;
+					>img {
+						width: 75%;
+					}
+				}
+
+				.box17 {
+					grid-column: 1 / 5;
+					grid-row: 1;
+				}
+
+				.box18 {
+					grid-column: 1 / 5;
+					grid-row: 2;
+				}
+
+				.box19 {
+					grid-column: 2 / 4;
+					grid-row: 3;
+				}
+
+				// Meet the Artist Gallery/Freinds book button
+				//=====================================
+
+
+				.boxMeetArtistGallery {
+						grid-column: 2 / 4;
+						margin-right: -13%;
+				}
+
+				.box15 {
+					grid-column: 1 / 2;
+					min-height: 50vh;
+				}
+
+				a.btn-large.meetArtist {
+				    margin-bottom: 30px;
+
+				}
+
+@include break(570) {
+
+			.displayClass3 {
+					display: none;
+				}
+
+			.grid-five {
+					margin-top: 0;
+					margin-right: 0%;
+					margin-bottom: 0;
+					margin-left: 0%;
+				}
+
+			.boxMeetArtistGallery {
+					grid-column: 1/7;
+					grid-row: 2;
+					margin-right: 0%;
+					display: block;
+			}
+
+				.box15 {
+					grid-column: 1/7;
+					grid-row: 1;
+					min-height: 50vh;
+					display: block;
+				}
+
+				a.btn-large.meetArtist {
+				    margin-bottom: 30px;
+
+				}
+	}
+
+	@include break(570) {
+				.box15 {
+					grid-column: 1/7;
+					grid-row: 1;
+					min-height: 30vh;
+					display: block;
+					padding: 0 7% 0 0px;
+				}
+
+	}
+
+
+
+
+
+	// Workshop artist collapsible-header
+	// =====================
+
+			.box20 {
+				grid-column: 1/3;
+				grid-row: 1;
+				border: 0px solid red ;
+				display: flex;
+				flex-wrap: nowrap;
+				//min-width: 100%;
+
+				// align-items: center;
+			}
+
+			.bookings {
+								border: 0px solid green ;
+								margin-left: 40px;
+								min-width: 100%;
+
+					}
+
+
+	@include break(768) {
+
+						.box20 {
+							grid-column: 1/4;
+							grid-row: 1;
+							border: 0px solid red ;
+							display: flex;
+							flex-direction: row;
+							justify-content: flex-start;
+							flex-wrap: nowrap;
+							// align-items: center;
+						}
+
+						.bookings {
+											border: 0px solid green ;
+											margin-left: 20px;
+								}
+
+			}
+
+
+
+
+.exampleArtistWorkshop { //gallery shot of artist
+						  width: 115px;
+						  height: 115px;
+						  border-radius: 50%;
+						  border: 2px solid white;
+						  align-self: center;
+						  margin-left: 0;
+				}
+
+	@include break(525) { //switch off portrait
+
+							.exampleArtistWorkshop {
+									display: none;
+							}
+
+	}
+
+
+//gallery workshop bookings here plesae
+
+
+			.box20Collapsible {
+				grid-column: 1/3;
+				grid-row: 1;
+				border: 0px solid black;
+			}
+
+
+
+			.box21Quote {
+				grid-column: 3/4;
+				grid-row: 1;
+				border: 0px solid yellow ;
+				align-self: center;
+			}
+
+			.box21Input {
+				grid-column: 3/4;
+				grid-row: 1;
+				border: 0px solid red;
+				margin-top: 55px;
+			}
+
+			.box21 {
+				grid-column: 3/4;
+				grid-row: 1;
+				border: 0px solid red ;
+				margin: -14px -34% -16px 0;
+
+					> img {
+							width: 100%;
+
+					}
+			}
+
+
+//Workshop banner grid
+
+		.boxWorkshop1 {
+				grid-column: 1/3;
+				grid-row: 1;
+				border: 0px solid green ;
+
+			}
+
+		.boxWorkshop2 {
+				grid-column: 3/4;
+				grid-row: 1;
+				border: 0px solid red ;
+				padding: 15px;
+				margin: -20px 0;
+				background-color: rgba(0, 0, 0, 0.4);
+			}
+
+@include break(768) { //switch off background color
+		.boxWorkshop2 {
+			background-color:  rgba(0, 0, 0, 0.0);
+		}
+}
